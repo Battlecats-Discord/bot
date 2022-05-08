@@ -1,0 +1,37 @@
+import { inspect } from 'util';
+import { MessageEmbed, Message } from 'discord.js';
+import config from '../config.json';
+
+module.exports = {
+  name: 'eval',
+  async execute(message: Message, args: String[]) {
+    if (config.evalAccepts.includes(message.author.id)) return;
+
+    try {
+      // eslint-disable-next-line no-eval
+      const evaled = await eval(args.join(' '));
+      message
+        .reply({
+          embeds: [
+            new MessageEmbed()
+              .setTitle('出力')
+              .setDescription(`\`\`\`js\n${inspect(evaled)}\n\`\`\``)
+              .setColor('BLURPLE'),
+          ],
+        })
+        .catch((e) => {
+          console.log(inspect(evaled));
+          message.reply('コンソールへ出力しました。');
+        });
+    } catch (e) {
+      message.reply({
+        embeds: [
+          new MessageEmbed()
+            .setTitle('エラー')
+            .setDescription(`\`\`\`js\n${e}\n\`\`\``)
+            .setColor('RED'),
+        ],
+      });
+    }
+  },
+};

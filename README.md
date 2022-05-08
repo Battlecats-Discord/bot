@@ -1,2 +1,1 @@
-# bot
-にゃんこ大戦争サーバーのbot
+# Battlecats-server-bot

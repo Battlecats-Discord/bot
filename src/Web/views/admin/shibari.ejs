@@ -1,0 +1,45 @@
+<%- include('../includes/header', { title: '縛りプレイ管理' }) %>
+
+  <div class="top px-4 my-5">
+    <h1 class="h3">縛りプレイ管理</h1>
+
+    <div class="card">
+      <ul class="list-group list-group-flush">
+        <% for (const row of rows) { %>
+          <li class="list-group-item">
+            <div class="container overflow-hidden">
+              <div class="row">
+                <div class="col-10">
+                  <%= row.text.replace(/\\n/, '<br />' ) %>
+                </div>
+                <div class="col-2">
+                  <%= new Date(row.date).toLocaleString('ja-JP') %>
+                </div>
+                <div class="col-10"></div>
+                <div class="col-2">
+                  <button type="button" class="btn btn-danger" disabled>削除</button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <% } %>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h4>追加</h4>
+      <form action="/admin/shibari/add" method="post">
+        <div class="mb-3">
+          <label for="text" class="form-label">テキスト</label>
+          <textarea class="form-control" id="text" name="text" rows="3" required></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="datetime" class="form-label">日時</label>
+          <input type="datetime-local" id="datetime" name="date" required>
+        </div>
+        <button class="btn btn-success">追加</button>
+      </form>
+    </div>
+  </div>
+
+  <%- include('../includes/footer') %>

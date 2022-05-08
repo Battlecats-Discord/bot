@@ -1,0 +1,34 @@
+{
+  "token": "OTMxODEzMjU4ODc5NDU1MjQz.YeJ4uQ.pBT9y-f9k4dO6TmLyuvTf4g0-dA",
+  "evalAccepts": ["825979698425102346", "661028503927521295", "794119190793420810"],
+
+  "guildId": "971063863506264074",
+
+  "channels": {
+    "progress": "971063962315653230",
+    "log": "971063902802698240",
+    "shibari": "971065325674197063"
+  },
+  "roles": {
+    "verify": "971064099767205989"
+  },
+
+  "basicAuth": {
+    "username": "admin",
+    "password": "P@ssw0rd"
+  },
+  "cse": {
+    "apiKey": "AIzaSyCAEy8Yujg950KLcKtzJ-C2QGZjNlRRHDw",
+    "cx": "d5d85493077d946a9"
+  },
+  "recaptcha": {
+    "siteKey": "6Lfj7MQdAAAAAHETHeSuuVFwlBr0H6iQ0QE97UVa",
+    "secret": "6Lfj7MQdAAAAAPBO8HJel9M-tPXCLZfxdmlpP5zd"
+  },
+  "database": {
+    "host": "public.b9dkd.tky1.mdbs.jp",
+    "user": "tubuanha",
+    "password": "QHqAmsUsi8X$nHKgl(YUaOLw",
+    "database": "b9dkd_battlecats"
+  }
+}
